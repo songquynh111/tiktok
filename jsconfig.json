@@ -1,0 +1,9 @@
+// cấu hình gợi ý path khi import module (autocomplete path)
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
+  }
+}

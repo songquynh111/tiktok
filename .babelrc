@@ -1,0 +1,13 @@
+//babel plugin module resolver sử dụng ~ để alias đến thư mục src
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "~": "./src"
+        }
+      }
+    ]
+  ]
+}
