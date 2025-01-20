@@ -1,11 +1,5 @@
-import { useState } from 'react';
-
 function App() {
-    return (
-        <div className="App" style={{ padding: 200 }}>
-            sss
-        </div>
-    );
+    return <div className="App">React App</div>;
 }
 
 export default App;
