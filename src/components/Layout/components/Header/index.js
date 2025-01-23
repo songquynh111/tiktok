@@ -2,7 +2,11 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleXmark,
+    faEarthAsia,
+    faEllipsisVertical,
+    faKeyboard,
     faMagnifyingGlass,
+    faQuestionCircle,
     faSign,
     faSignIn,
     faSignOut,
@@ -16,9 +20,24 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { useEffect, useState } from 'react';
 import AccountItem from '~/components/AccountItem';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
-
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia}/>,
+        title: 'English'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faQuestionCircle}/>,
+        title: 'Feedback and Help',
+        to: '/feedback'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard}/>,
+        title: 'Keyboard shortcuts'
+    },
+]
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
 
@@ -46,8 +65,6 @@ function Header() {
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
                             </PopperWrapper>
                         </div>
                     )}
@@ -70,18 +87,28 @@ function Header() {
                 <div className={cx('action')}>
                     <Button text>Upload</Button>
                     <Button primary>Login</Button>
+
+                    <Menu
+                        items = {MENU_ITEMS}
+                    >
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
+
                     {/* <Button
                         primary
                         leftIcon={<FontAwesomeIcon icon={faSignIn} />}
                         rightIcon={<FontAwesomeIcon icon={faSignOut} />}
                     >
                         Login
-                    </Button>
-                    <Button outline rounded className={cx('custom-login')}>
+                    </Button> */}
+                    {/* <Button outline rounded className={cx('custom-login')}>
                         Login
                     </Button> */}
-                    {/* <Button outline small>Login</Button>
-                    <Button primary large>Register</Button> */}
+                    {/* <Button outline small>
+                        Login
+                    </Button> */}
                 </div>
             </div>
         </header>
