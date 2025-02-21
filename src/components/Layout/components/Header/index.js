@@ -10,8 +10,10 @@ import {
     faSignOut,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import routesConfig from '~/config/routes'
 
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
@@ -29,6 +31,52 @@ const MENU_ITEMS = [
         children: {
             title: 'Language',
             data: [
+                {
+                    type: 'lang',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'lang',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                    children: {
+                        title: 'Cấp 2',
+                        data: [
+                            {
+                                code: 'en',
+                                title: 'English1',
+                            },
+                            {
+                                code: 'vi',
+                                title: 'Tiếng Việt1',
+                            },
+                        ],
+                    },
+                },
+                {
+                    type: 'lang',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'lang',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                    children: {
+                        title: 'Cấp 2',
+                        data: [
+                            {
+                                code: 'en',
+                                title: 'English1',
+                            },
+                            {
+                                code: 'vi',
+                                title: 'Tiếng Việt1',
+                            },
+                        ],
+                    },
+                },
                 {
                     type: 'lang',
                     code: 'en',
@@ -111,7 +159,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="tiktok"></img>
+                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                        <img src={images.logo} alt="tiktok"></img>
+                    </Link>
                 </div>
 
                 <Search></Search>
