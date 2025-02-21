@@ -1,8 +1,8 @@
-import request from '~/utils/request';
+import * as httpRequest from '~/utils/httpRequest';
 
 export const search = async (q, type = 'less') => {
     try {
-        const res = await request.get('ddx/');
+        const res = await httpRequest.get('ddx/');
         return res.data;
     } catch (error) {
         console.log(error);
