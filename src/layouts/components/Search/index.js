@@ -59,13 +59,17 @@ function Search() {
         e.preventDefault();
     };
     return (
-        //  sing a wrapper <div> around the reference element solves this by creating a new parentNode context. 
+        //  sing a wrapper <div> around the reference element solves this by creating a new parentNode context.
         <div>
             <HeadlessTippy
                 interactive={true}
                 visible={showResult && searchResult.length > 0}
                 render={(attrs) => (
-                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                    <div
+                        className={cx('search-result')}
+                        tabIndex="-1"
+                        {...attrs}
+                    >
                         <PopperWrapper>
                             <h4 className={cx('search-title')}>Accounts</h4>
                             {searchResult.map((item) => (
@@ -96,7 +100,7 @@ function Search() {
                             icon={faSpinner}
                         />
                     )}
-    
+
                     <button
                         className={cx('search-btn')}
                         onMouseDown={(e) => e.preventDefault()}
