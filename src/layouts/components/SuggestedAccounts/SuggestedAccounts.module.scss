@@ -1,0 +1,51 @@
+.wrapper {
+    border-top: 1px solid #e3e3e4;
+}
+
+.label {
+    padding: 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.account-item {
+    display: flex;
+    padding: 8px;
+    cursor: pointer;
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.item-info {
+    flex: 1;
+    margin-left: 12px;
+}
+.nickname {
+    font-size: 1.6rem;
+    color: #161823;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1;
+}
+.check {
+    margin-left: 6px;
+    font-size: 1.4rem;
+    color: #20d5ec;
+}
+.username {
+    font-size: 1.2rem;
+    // 2 kí tự cuối là opacity
+    opacity: #161823bf;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.see-more {
+    padding: 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fe2c5f;
+    cursor: pointer;
+}
